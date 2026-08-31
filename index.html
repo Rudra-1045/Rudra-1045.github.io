@@ -3,19 +3,175 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+
+    <title>rudy@portfolio</title>
+
     <style>
-        .center{
-            display: flex;
-            justify-content: center;
-            align-items: center;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
             height: 100vh;
+            background: #0d1117;
+            color: #c9d1d9;
+            font-family: "Courier New", monospace;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .terminal {
+            width: 90%;
+            max-width: 850px;
+
+            background: #010409;
+
+            border: 1px solid #30363d;
+            border-radius: 10px;
+
+            overflow: hidden;
+
+            box-shadow:
+                0 20px 60px rgba(0, 0, 0, 0.45);
+        }
+
+        /* Terminal title bar */
+
+        .top {
+            height: 38px;
+
+            background: #161b22;
+            border-bottom: 1px solid #30363d;
+
+            display: flex;
+            align-items: center;
+
+            padding: 0 14px;
+        }
+
+        .dots {
+            display: flex;
+            gap: 7px;
+        }
+
+        .dot {
+            width: 11px;
+            height: 11px;
+
+            border-radius: 50%;
+
+            background: #30363d;
+        }
+
+        .title {
+            position: absolute;
+
+            left: 50%;
+            transform: translateX(-50%);
+
+            font-size: 12px;
+            color: #8b949e;
+        }
+
+        /* Terminal content */
+
+        .content {
+            padding: 28px;
+
+            min-height: 230px;
+
+            font-size: 15px;
+            line-height: 1.8;
+        }
+
+        .command {
+            color: #7ee787;
+        }
+
+        .prompt {
+            color: #58a6ff;
+        }
+
+        .text {
+            color: #c9d1d9;
+
+            font-size: clamp(20px, 4vw, 32px);
+
+            margin-top: 8px;
+        }
+
+        .cursor {
+            display: inline-block;
+
+            width: 9px;
+            height: 20px;
+
+            background: #c9d1d9;
+
+            vertical-align: middle;
+
+            margin-left: 4px;
+
+            animation: blink 1s steps(1) infinite;
+        }
+
+        @keyframes blink {
+            50% {
+                opacity: 0;
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            .content {
+                padding: 22px;
+                font-size: 13px;
+            }
+
+            .text {
+                font-size: 21px;
+            }
+
         }
     </style>
 </head>
+
 <body>
-    <div class="center">
-  <p>AISE KYA DEKH RAHE HO <br>BEROZGAR HU</p>
-  </div>
+
+    <div class="terminal">
+
+        <div class="top">
+
+            <div class="title">
+                Terminal
+            </div>
+
+        </div>
+
+
+        <div class="content">
+
+            <div>
+                <span class="prompt">rudy@portfolio</span>:<span class="command">~$</span>
+                <!--whoami-->
+            </div>
+
+            <div class="text">
+                AISE KYA DEKH RAHE HO...
+            </div>
+
+            <div class="text">
+                BEROZGAR HU!<span class="cursor"></span>
+            </div>
+
+        </div>
+
+    </div>
+
 </body>
 </html>
+
